@@ -19,12 +19,19 @@ import static nodes.exampleNode.contants.Constant.EXAMPLE_MESSAGE;
  */
 public class ExampleServiceImpl implements ExampleService {
 
-    private final HelperService helperService;
 
     @Inject
-    public ExampleServiceImpl(HelperService helperService) {
-        this.helperService = helperService;
-    }
+    private HelperService helperService;
+
+    // This is just an equivalent way to express the same thing, but is much more wordy, use it only if you need
+    // extra logic in constructor
+
+    //    @Inject
+    //    public ExampleServiceImpl(HelperService helperService) {
+    //        this.helperService = helperService;
+    //    }
+
+
 
     public void runService(ServiceParam serviceParam) {
         ExampleServiceParam exampleServiceParam = (ExampleServiceParam) serviceParam;
